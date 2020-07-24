@@ -3,17 +3,17 @@ import Head from 'next/head'
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
+      <title>Hi¡</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <main>
       <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        Welcome to <a href="https://nextjs.org">Hi! I'm Isa</a>
       </h1>
 
       <p className="description">
-        Get started by editing <code>pages/index.js</code>
+        Get started by  <code>pages/index.js</code>
       </p>
 
       <div className="grid">
