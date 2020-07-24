@@ -1,12 +1,13 @@
 import Head from 'next/head'
 
 const images = [
-	{name: 'Social App Concept', imgUrl: 'app-social.png'}, 
-	{name: 'Despegar', imgUrl: 'despegar.jpg'}, 
-	{name: 'Glow', imgUrl: 'glow.png'}, 
-	{name: 'Ransom', imgUrl: 'ransom.png'}, 
 	{name: 'Stripe', imgUrl: 'stripe.jpg'}, 
-	{name: 'TeeRead', imgUrl: 'teeRead.png'}];
+	{name: 'Despegar', imgUrl: 'despegar.jpg'}, 
+	{name: 'TeeRead', imgUrl: 'teeRead.png'},
+	{name: 'Glow', imgUrl: 'glow.png'}, 
+	{name: 'Social App Concept', imgUrl: 'app-social.png'},
+	{name: 'Ransom', imgUrl: 'ransom.png'}, 
+] 
 
 const Home = () => (
   <div className="container">
@@ -23,7 +24,7 @@ const Home = () => (
       <div className="grid">
 				{
 					images.map((image) => 
-						<a href="#" className="card" style={{backgroundImage: `url('/covers/${image.imgUrl}')`  }}>
+						<a href="#" className="card" style={{background: `linear-gradient(#e6646500, #7681fd52), no-repeat center/100% url('/covers/${image.imgUrl}')`  }}>
 							<h3>{image.name}</h3>
 							{/* <p>Find in-depth information about Next.js features and API.</p> */}
 						</a>
@@ -61,7 +62,13 @@ const Home = () => (
       </div>
     </main>
 
-    <style jsx>{`
+		<style jsx>{`
+			@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+			
+			html, body {
+				font-family: 'Karla', sans-serif;
+			}
+
       .container {
         min-height: 100vh;
         padding: 0 0.5rem;
@@ -72,6 +79,7 @@ const Home = () => (
       }
 
       main {
+				width: 100%;
         padding: 5rem 0;
         flex: 1;
         display: flex;
@@ -145,13 +153,13 @@ const Home = () => (
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-
+				width: 100%;
         // max-width: 800px;
         margin-top: 3rem;
       }
 
       .card {
-        margin: 1rem;
+        margin: 3rem 2rem;
         flex-basis: 45%;
         padding: 1.5rem;
         text-align: left;
@@ -160,29 +168,30 @@ const Home = () => (
         // border: 1px solid #eaeaea;
         border-radius: 10px;
 				transition: color 0.15s ease, border-color 0.15s ease;
-				
-				background-image: url(/covers/app-social.png);
-				background-size: 100%;
 				display: flex;
-				min-height: 20rem;
+				min-height: 25rem;
 				align-items: flex-end;
-				background-image: url(/covers/despegar.jpg);
 				background-position: center center;
-				transition: background-size 290ms ease-in-out;
+				transition: background-size 290ms ease-in-out, background 290ms ease-in-out;
+				background-size: 100%, 100%;
+				position: relative;
       }
 
       .card:hover,
       .card:focus,
       .card:active {
-				background-size: 105%;
         // color: #0070f3;
-        // border-color: #0070f3;
+				// border-color: #0070f3;
+				background-size: 100%, 105% !important;
+				transition: background-size 290ms ease-in-out, background 290ms ease-in-out;
       }
 
       .card h3 {
 				margin: 0;
         // margin: 0 0 1rem 0;
-        font-size: 1.5rem;
+				font-size: 1.5rem;
+				position: absolute;
+    		bottom: -2.5rem;	
       }
 
       .card p {
