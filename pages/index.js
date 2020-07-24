@@ -1,5 +1,13 @@
 import Head from 'next/head'
 
+const images = [
+	{name: 'Social App Concept', imgUrl: 'app-social.png'}, 
+	{name: 'Despegar', imgUrl: 'despegar.jpg'}, 
+	{name: 'Glow', imgUrl: 'glow.png'}, 
+	{name: 'Ransom', imgUrl: 'ransom.png'}, 
+	{name: 'Stripe', imgUrl: 'stripe.jpg'}, 
+	{name: 'TeeRead', imgUrl: 'teeRead.png'}];
+
 const Home = () => (
   <div className="container">
     <Head>
@@ -9,14 +17,20 @@ const Home = () => (
 
     <main>
       <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Hi! I'm Isa</a>
+				Isabel Bensusan
       </h1>
 
-      <p className="description">
-        Get started by  <code>pages/index.js</code>
-      </p>
-
       <div className="grid">
+				{
+					images.map((image) => 
+						<a href="#" className="card" style={{backgroundImage: `url('/covers/${image.imgUrl}')`  }}>
+							<h3>{image.name}</h3>
+							{/* <p>Find in-depth information about Next.js features and API.</p> */}
+						</a>
+					)
+				}
+
+{/* 
         <a href="https://nextjs.org/docs" className="card">
           <h3>Documentation &rarr;</h3>
           <p>Find in-depth information about Next.js features and API.</p>
@@ -43,19 +57,9 @@ const Home = () => (
           <p>
             Instantly deploy your Next.js site to a public URL with Vercel.
           </p>
-        </a>
+        </a> */}
       </div>
     </main>
-
-    <footer>
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/vercel.svg" alt="Vercel Logo" />
-      </a>
-    </footer>
 
     <style jsx>{`
       .container {
@@ -142,7 +146,7 @@ const Home = () => (
         justify-content: center;
         flex-wrap: wrap;
 
-        max-width: 800px;
+        // max-width: 800px;
         margin-top: 3rem;
       }
 
@@ -153,20 +157,31 @@ const Home = () => (
         text-align: left;
         color: inherit;
         text-decoration: none;
-        border: 1px solid #eaeaea;
+        // border: 1px solid #eaeaea;
         border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
+				transition: color 0.15s ease, border-color 0.15s ease;
+				
+				background-image: url(/covers/app-social.png);
+				background-size: 100%;
+				display: flex;
+				min-height: 20rem;
+				align-items: flex-end;
+				background-image: url(/covers/despegar.jpg);
+				background-position: center center;
+				transition: background-size 290ms ease-in-out;
       }
 
       .card:hover,
       .card:focus,
       .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
+				background-size: 105%;
+        // color: #0070f3;
+        // border-color: #0070f3;
       }
 
       .card h3 {
-        margin: 0 0 1rem 0;
+				margin: 0;
+        // margin: 0 0 1rem 0;
         font-size: 1.5rem;
       }
 
