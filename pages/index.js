@@ -220,11 +220,17 @@ const Home = () => (
       @media (max-width: 600px) {
         .grid {
           width: 100%;
-          flex-direction: column;
+					flex-direction: column;
+					align-items: start;
+					padding-left: 10px;
+					padding-right: 10px;
 				}
 				
 				.card { 
-					width: 90%
+					width: 100%;
+					margin-left: 0;
+					margin-right: 0;
+					max-width: 100%;
 				}
       }
     `}</style>
