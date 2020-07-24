@@ -85,7 +85,8 @@ const Home = () => (
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+				align-items: center;
+				max-width: 1500px;
 			}
 
       footer {
@@ -220,7 +221,11 @@ const Home = () => (
         .grid {
           width: 100%;
           flex-direction: column;
-        }
+				}
+				
+				.card { 
+					width: 90%
+				}
       }
     `}</style>
 
