@@ -3,8 +3,8 @@ import Head from 'next/head'
 const images = [
 	{name: 'Social App Concept', imgUrl: 'app-social.png', rgb: '81, 14, 237', url: 'https://www.behance.net/gallery/101281451/Social-Video-App'},
 	{name: 'Ransom', imgUrl: 'ransom.png', rgb: '67, 49, 193', url: 'https://www.behance.net/gallery/101281165/Ransom'}, 
-	{name: 'Stripe', imgUrl: 'stripe.jpg', rgb: '0, 21, 255', url: 'https://drive.google.com/file/d/1pX3ywS38glhpNH-cMT1Qh85XlEnmpOCL/view?usp=sharing'}, 
-	{name: 'Despegar', imgUrl: 'despegar.jpg', rgb: '81, 14, 237', url: 'https://drive.google.com/file/d/1qCb1_gKE12o3D2zCooxfq-Syq1El9W00/view?usp=sharing'}, 
+	{name: 'Stripe', imgUrl: 'stripe.jpg', rgb: '0, 21, 255', url: 'https://drive.google.com/drive/folders/13t-bCfUTfI4GHQALP_hZYOXd9anz4KpA?usp=sharing'}, 
+	{name: 'Despegar', imgUrl: 'despegar.jpg', rgb: '81, 14, 237', url: 'https://drive.google.com/drive/folders/1mwNRtTMolkL5sbfat4P5pgQhuCnHBd7M?usp=sharing'}, 
 	{name: 'TeeRead', imgUrl: 'teeRead.png', rgb: '33, 150, 243', url: 'https://www.behance.net/gallery/101281325/TeeRead'},
 	{name: 'Glow', imgUrl: 'glow.png', rgb: '229, 197, 204', url: 'https://www.behance.net/gallery/101281057/Glow'}, 
 ] 
@@ -12,7 +12,7 @@ const images = [
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Hi¡</title>
+      <title>Isa Bensusan | Portfolio</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
