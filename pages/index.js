@@ -1,12 +1,12 @@
 import Head from 'next/head'
 
 const images = [
-	{name: 'Stripe', imgUrl: 'stripe.jpg'}, 
-	{name: 'Despegar', imgUrl: 'despegar.jpg'}, 
-	{name: 'TeeRead', imgUrl: 'teeRead.png'},
-	{name: 'Glow', imgUrl: 'glow.png'}, 
-	{name: 'Social App Concept', imgUrl: 'app-social.png'},
-	{name: 'Ransom', imgUrl: 'ransom.png'}, 
+	{name: 'Social App Concept', imgUrl: 'app-social.png', rgb: '81, 14, 237', url: 'https://www.behance.net/gallery/101281451/Social-Video-App'},
+	{name: 'Ransom', imgUrl: 'ransom.png', rgb: '67, 49, 193', url: 'https://www.behance.net/gallery/101281165/Ransom'}, 
+	{name: 'Stripe', imgUrl: 'stripe.jpg', rgb: '0, 21, 255', url: 'https://drive.google.com/file/d/1pX3ywS38glhpNH-cMT1Qh85XlEnmpOCL/view?usp=sharing'}, 
+	{name: 'Despegar', imgUrl: 'despegar.jpg', rgb: '81, 14, 237', url: 'https://drive.google.com/file/d/1qCb1_gKE12o3D2zCooxfq-Syq1El9W00/view?usp=sharing'}, 
+	{name: 'TeeRead', imgUrl: 'teeRead.png', rgb: '33, 150, 243', url: 'https://www.behance.net/gallery/101281325/TeeRead'},
+	{name: 'Glow', imgUrl: 'glow.png', rgb: '229, 197, 204', url: 'https://www.behance.net/gallery/101281057/Glow'}, 
 ] 
 
 const Home = () => (
@@ -17,14 +17,19 @@ const Home = () => (
     </Head>
 
     <main>
-      <h1 className="title">
-				Isabel Bensusan
-      </h1>
+			<div className="title-wrapper">
+				<h1 className="title">
+					Isa Bensusan
+				</h1>
+				<p className="subtitle">Product Portfolio 2020</p>
+			</div>
 
       <div className="grid">
 				{
 					images.map((image) => 
-						<a href="#" className="card" style={{background: `linear-gradient(#e6646500, #7681fd52), no-repeat center/100% url('/covers/${image.imgUrl}')`  }}>
+						// <a href="#" className="card" style={{background: `linear-gradient(to top, #e6646500, #7681fd52), no-repeat center/100% url('/covers/${image.imgUrl}')`  }}>
+						<a href={`${image.url}`} className="card" style={{backgroundImage: `url('/covers/${image.imgUrl}')`  }}>	
+							<div className="overlay" style={{background: `linear-gradient(to top,rgba(${image.rgb}, 0.35) 10%, rgba(${image.rgb}, 0.15) 50%,rgba(230, 100, 101, 0) 90%)`  }}></div>
 							<h3>{image.name}</h3>
 							{/* <p>Find in-depth information about Next.js features and API.</p> */}
 						</a>
@@ -63,11 +68,6 @@ const Home = () => (
     </main>
 
 		<style jsx>{`
-			@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
-			
-			html, body {
-				font-family: 'Karla', sans-serif;
-			}
 
       .container {
         min-height: 100vh;
@@ -86,7 +86,7 @@ const Home = () => (
         flex-direction: column;
         justify-content: center;
         align-items: center;
-      }
+			}
 
       footer {
         width: 100%;
@@ -126,13 +126,17 @@ const Home = () => (
       .title {
         margin: 0;
         line-height: 1.15;
-        font-size: 4rem;
+				font-size: 4rem;
+				display: block;
+				width: 100%;
+				text-align: left;
+				font-size: 2.5rem;
       }
 
-      .title,
-      .description {
-        text-align: center;
-      }
+			.title-wrapper {
+				width: 100%;
+				padding-left: 3rem;
+			}
 
       .description {
         line-height: 1.5;
@@ -155,11 +159,10 @@ const Home = () => (
         flex-wrap: wrap;
 				width: 100%;
         // max-width: 800px;
-        margin-top: 3rem;
       }
 
       .card {
-        margin: 3rem 2rem;
+        margin: 4rem 2rem;
         flex-basis: 45%;
         padding: 1.5rem;
         text-align: left;
@@ -172,8 +175,8 @@ const Home = () => (
 				min-height: 25rem;
 				align-items: flex-end;
 				background-position: center center;
-				transition: background-size 290ms ease-in-out, background 290ms ease-in-out;
-				background-size: 100%, 100%;
+				transition: background-size 290ms ease-in-out;
+				background-size: 100%;
 				position: relative;
       }
 
@@ -182,23 +185,36 @@ const Home = () => (
       .card:active {
         // color: #0070f3;
 				// border-color: #0070f3;
-				background-size: 100%, 105% !important;
+				background-size: 105%;
 				transition: background-size 290ms ease-in-out, background 290ms ease-in-out;
       }
 
       .card h3 {
 				margin: 0;
-        // margin: 0 0 1rem 0;
 				font-size: 1.5rem;
 				position: absolute;
-    		bottom: -2.5rem;	
+				
+				bottom: -3.2rem;
+    		font-weight: 400;
       }
 
       .card p {
         margin: 0;
         font-size: 1.25rem;
         line-height: 1.5;
-      }
+			}
+			
+			.overlay {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: blue;
+				display: block;
+				top: 0;
+				left: 0;
+				background: linear-gradient(#e6646500, #7681fd52);
+				border-radius: 10px;
+			}
 
       @media (max-width: 600px) {
         .grid {
@@ -208,14 +224,16 @@ const Home = () => (
       }
     `}</style>
 
-    <style jsx global>{`
+		<style jsx global>{`
+			@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+			
       html,
       body {
         padding: 0;
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        font-family:'Karla', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
+			}
 
       * {
         box-sizing: border-box;
